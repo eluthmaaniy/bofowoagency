@@ -5,30 +5,20 @@ const baseUrl = "https://bofowoagency.com";
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
-  return [
-    {
-      url: `${baseUrl}/`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/reviews`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
+  const routes = [
+    { path: "/", priority: 1 },
+    { path: "/services", priority: 0.8 },
+    { path: "/reviews", priority: 0.8 },
+    { path: "/full-reviews", priority: 0.7 },
+    { path: "/portfolio", priority: 0.8 },
+    { path: "/full-portfolio", priority: 0.7 },
+    { path: "/contact", priority: 0.8 },
   ];
+
+  return routes.map(({ path, priority }) => ({
+    url: `${baseUrl}${path === "/" ? "/" : path}`,
+    lastModified,
+    changeFrequency: "monthly" as const,
+    priority,
+  }));
 }

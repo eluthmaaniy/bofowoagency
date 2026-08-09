@@ -2,18 +2,36 @@ export const profileImageUrl =
   "https://res.cloudinary.com/dr83qj6bf/image/upload/v1785952533/IMG-20260805-WA0022_uenfgc.jpg";
 
 export const coverImageUrl =
-  "https://res.cloudinary.com/dr83qj6bf/image/upload/v1785954734/Gemini_Generated_Image_9rw1ol9rw1ol9rw1_uvwmj7.png";
+  "https://res.cloudinary.com/dr83qj6bf/image/upload/v1786243185/Gemini_Generated_Image_aatgq6aatgq6aatg_flot6t.png";
 
 export const whatsappLink = "https://wa.me/16135181779";
 
 export const contactEmail = "abdulwasiuabdulhakeemhorla@gmail.com";
 
-export const skills = [
+export const rating = "5.0";
+export const reviewCount = 942;
+export const statLabel = "Top Rated Expert";
+
+export const tagline = "Shopify & Ecommerce Expert — Stores That Convert";
+export const location = "Nigeria";
+export const languages = "English";
+export const responseTime = "Average response time: 1 hour";
+
+export const bioSynopsis =
+  "Hi there, I'm Bofowo Agency. I'm a Shopify and ecommerce specialist with years of hands-on experience helping store owners design, build, and grow online brands that actually sell.";
+
+export const bioFull =
+  "I work across full store builds, product listings, dropshipping setups, and paid ads (Facebook, Instagram, TikTok, and Google). Whether you're launching from scratch or stuck after an early sales plateau, I focus on clear positioning, trust-building store design, and conversion-focused optimization so your traffic turns into revenue — and keeps performing after launch.";
+
+export const skillsVisible = [
   "Shopify Developer",
   "Shopify Store Designer",
   "Shopify Product Listing Expert",
   "Shopify Dropshipping Expert",
   "Shopify Marketing Expert",
+];
+
+export const skillsHidden = [
   "Dropshipping Store Expert",
   "Etsy Listing Expert",
   "Etsy Expert",
@@ -28,44 +46,36 @@ export const skills = [
   "Social Media Marketer",
 ];
 
+/** Homepage "What Clients Say" — Bofowo YouTube testimonials (order differs from prior sequence) */
 export const clientReviews = [
-  { id: "1", youtubeId: "FOGk2HH7dZ0", clientName: "Client Testimonial" },
-  { id: "2", youtubeId: "IvUNADcTfXw", clientName: "Client Testimonial" },
-  { id: "3", youtubeId: "5kB531OO_A0", clientName: "Client Testimonial" },
+  { id: "1", youtubeId: "5kB531OO_A0", clientName: "Client Testimonial" },
+  { id: "2", youtubeId: "FOGk2HH7dZ0", clientName: "Client Testimonial" },
+  { id: "3", youtubeId: "IvUNADcTfXw", clientName: "Client Testimonial" },
 ];
 
-export const storeShowcases = [
-  { id: "1", youtubeId: "JzFfn3pn4Ug", title: "Store Showcase" },
-  { id: "2", youtubeId: "0f6bA-uSpmc", title: "Store Showcase" },
-  { id: "3", youtubeId: "KX2CuX3pb94", title: "Store Showcase" },
-  { id: "4", youtubeId: "0yJ8lNYgV0E", title: "Store Showcase" },
-];
+export type { Service } from "./services-data";
+export { services } from "./services-data";
 
-export type CertificationEntry = {
-  name: string;
-  issuer: string;
-  year: string;
-};
+export type { Review, FeaturedReview, StarBreakdownItem } from "./reviews-data";
+export {
+  reviews,
+  featuredReviews,
+  starBreakdown,
+  qualityMetrics,
+} from "./reviews-data";
 
-export const certifications = [
-  {
-    name: "Udemy Shopify Website & Development",
-    issuer: "Udemy",
-    year: "Graduated 2019",
-  },
-  {
-    name: "SkillUp Facebook Marketing & Advertising",
-    issuer: "SkillUp",
-    year: "Graduated 2024",
-  },
-  {
-    name: "ALX Africa — Email Marketing Expert",
-    issuer: "ALX Africa",
-    year: "Graduated 2024",
-  },
-  {
-    name: "Shopify Merchant Listings Expert",
-    issuer: "Shopify",
-    year: "Graduated 2024",
-  },
-];
+export type {
+  PortfolioItem,
+  PortfolioProof,
+  PortfolioVideoTestimonial,
+} from "./portfolio-data";
+export {
+  portfolioItems,
+  portfolioProofs,
+  portfolioVideoTestimonials,
+} from "./portfolio-data";
+
+export type { FullPortfolioItem } from "./full-portfolio-data";
+export { fullPortfolioItems } from "./full-portfolio-data";
+
+export { fullReviews } from "./full-reviews-data";

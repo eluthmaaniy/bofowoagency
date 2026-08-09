@@ -1,31 +1,30 @@
 import type { Metadata } from "next";
-import { Sora } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import "remixicon/fonts/remixicon.css";
-import { Footer } from "./components/Footer";
-import { Header } from "./components/Header";
-import { StickyContact } from "./components/StickyContact";
+import CoverImage from "@/app/components/CoverImage";
+import Footer from "@/app/components/Footer";
 import {
   contactEmail,
   coverImageUrl,
   profileImageUrl,
-} from "./lib/data";
+} from "@/app/lib/data";
 import "./globals.css";
 
-const sora = Sora({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-sora",
+  weight: ["400", "500", "700"],
+  variable: "--font-dm-sans",
   display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://bofowoagency.com"),
   title: {
-    default: "Bofowo Agency — Shopify & Ecommerce Expert",
+    default: "Bofowo Agency — Top Rated Shopify Expert & Ecommerce Specialist",
     template: "%s | Bofowo Agency",
   },
   description:
-    "Bofowo Agency is a Shopify and ecommerce specialist helping store owners design, build, and optimize stores that convert. Real client results, real store showcases.",
+    "Bofowo Agency is a top-rated Shopify and ecommerce specialist helping store owners design, build, and optimize stores that convert. Real client results and store showcases.",
   keywords: [
     "Shopify expert",
     "ecommerce expert",
@@ -38,9 +37,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Bofowo Agency" }],
   openGraph: {
-    title: "Bofowo Agency — Shopify & Ecommerce Expert",
+    title: "Bofowo Agency — Top Rated Shopify Expert & Ecommerce Specialist",
     description:
-      "Shopify and ecommerce specialist helping store owners build stores that convert. Real client results, real store showcases.",
+      "Top-rated Shopify expert helping store owners build stores that convert. Real client results and store showcases.",
     url: "https://bofowoagency.com",
     siteName: "Bofowo Agency",
     images: [
@@ -56,7 +55,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bofowo Agency — Shopify & Ecommerce Expert",
+    title: "Bofowo Agency — Top Rated Shopify Expert & Ecommerce Specialist",
     description:
       "Shopify and ecommerce specialist helping store owners build stores that convert.",
     images: [coverImageUrl],
@@ -97,15 +96,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${sora.variable} font-sans`}>
+      <body className={`${dmSans.variable} font-sans antialiased`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <Header />
-        <main className="pb-24">{children}</main>
+        <CoverImage />
+        {children}
         <Footer />
-        <StickyContact />
       </body>
     </html>
   );

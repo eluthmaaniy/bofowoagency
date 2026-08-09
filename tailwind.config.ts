@@ -9,14 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#FFFFFF",
-        ink: "#111417",
-        accent: "#2596BE",
-        surface: "#F4F8FA",
-        border: "#E2E8ED",
+        background: "#ffffff",
+        ink: "#222325",
+        heading: "#222325",
+        hover: "#1DBF73",
+        accent: "#0F5533",
+        pink: "#FF69B4",
+        surface: "#f3f4f6",
+        border: "#e5e7eb",
       },
       fontFamily: {
-        sans: ["var(--font-sora)", "sans-serif"],
+        sans: ["var(--font-dm-sans)", "sans-serif"],
       },
     },
   },

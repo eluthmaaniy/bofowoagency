@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import FeaturedReviewCard from "@/app/components/FeaturedReviewCard";
 import PageShell from "@/app/components/PageShell";
 import ReviewCard from "@/app/components/ReviewCard";
@@ -7,18 +6,11 @@ import {
   qualityMetrics,
   rating,
   reviewCount,
-  reviews,
   starBreakdown,
 } from "@/app/lib/data";
-import Link from "next/link";
+import { fullReviews } from "@/app/lib/full-reviews-data";
 
-export const metadata: Metadata = {
-  title: "Client Reviews",
-  description:
-    "Read client reviews and ratings for Bofowo Agency — Shopify and ecommerce specialist.",
-};
-
-export default function ReviewsPage() {
+export default function FullReviewsPage() {
   return (
     <PageShell>
       <section className="mt-8 md:flex md:gap-8">
@@ -26,7 +18,6 @@ export default function ReviewsPage() {
           <h2 className="text-xl font-bold text-heading md:text-2xl">
             {reviewCount} Reviews
           </h2>
-
           <div className="mt-4 flex items-center gap-4">
             <div>
               <div className="text-3xl font-bold text-heading">{rating}</div>
@@ -38,7 +29,6 @@ export default function ReviewsPage() {
                 <i className="ri-star-fill" />
               </div>
             </div>
-
             <div className="ml-2 text-sm text-gray-600">
               {starBreakdown.map((item) => (
                 <div
@@ -57,7 +47,6 @@ export default function ReviewsPage() {
               ))}
             </div>
           </div>
-
           <div className="mt-6 space-y-2 text-sm">
             {qualityMetrics.map((metric) => (
               <div key={metric.label} className="flex justify-between">
@@ -88,21 +77,14 @@ export default function ReviewsPage() {
       </section>
 
       <section className="mt-8">
-        <h3 className="mb-4 text-lg font-semibold text-heading">
-          Recent Reviews
-        </h3>
+        <h3 className="mb-4 text-lg font-semibold text-heading">All Reviews</h3>
+        <p className="mb-4 text-sm text-gray-500">
+          Showing {fullReviews.length} of {reviewCount} reviews
+        </p>
         <div className="grid grid-cols-1 gap-4">
-          {reviews.map((review) => (
+          {fullReviews.map((review) => (
             <ReviewCard key={review.id} review={review} />
           ))}
-        </div>
-        <div className="mt-6 text-center">
-          <Link
-            href="/full-reviews"
-            className="inline-block rounded bg-accent px-5 py-2 text-white transition hover:bg-hover"
-          >
-            Show more reviews
-          </Link>
         </div>
       </section>
     </PageShell>

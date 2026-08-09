@@ -1,13 +1,10 @@
-import { AboutPreview } from "./components/AboutPreview";
-import { Hero } from "./components/Hero";
-import { ShowcasePreview } from "./components/ShowcasePreview";
+import AboutSection from "@/app/components/AboutSection";
+import PageShell from "@/app/components/PageShell";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <>
-      <Hero />
-      <AboutPreview />
-      <ShowcasePreview />
-    </>
+    <PageShell>
+      <AboutSection />
+    </PageShell>
   );
 }
