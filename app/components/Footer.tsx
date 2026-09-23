@@ -7,6 +7,17 @@ export default function Footer() {
         <p className="text-sm">
           &copy; {year} Bofowo Agency. All rights reserved.
         </p>
+        <p className="mt-2 text-xs text-white/55">
+          Built by{" "}
+          <a
+            href="https://eltemur.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/80 underline decoration-white/25 underline-offset-2 hover:text-white"
+          >
+            Eltemur Zentra Studio
+          </a>
+        </p>
       </div>
     </footer>
   );
